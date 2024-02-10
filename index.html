@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reactjs</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 22px;
+        }
+
+        #main {
+            margin: auto;
+            width: 80%;
+        }
+
+        /* body{
+            margin: 0;
+        }
+
+        #main {
+            margin: 10px;
+        } */
+
+        .ex {
+            background-color: rgb(246 240 251);
+            box-shadow: 0 0 10px 2px black;
+            padding: 10px;
+        }
+
+        @media screen and (max-width : 600px) {
+            #main {
+                width: 100%
+            }
+
+            h1,
+            h2,
+            h3 {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="main">
+        <h1>HISTORY OF REACT JS</h1>
+        <div class="ex">
+            <li>
+                ReactJS is a popular open-source JavaScript library used for building user interfaces. It was
+                developed by Facebook and was first released in 2013. Since then, React has become one of the most
+                widely
+                used front-end development frameworks, with a large and active community of developers contributing to
+                its
+                growth and development.
+            </li> <br>
+            <li>
+                The history of ReactJS can be traced back to 2010 when Jordan Walke, a software engineer at Facebook,
+                created an internal prototype of React called "FaxJS." FaxJS was built to solve a specific problem that
+                Facebook was facing at the time, which was to update the News Feed in real-time without having to
+                refresh
+                the page. FaxJS was successful in solving this problem, and Facebook soon realized that it had broader
+                applications for building user interfaces.
+            </li> <br>
+            <li>
+                In 2011, Facebook started using React internally, and the library was later released as an open-source
+                project in 2013 at the JSConf US conference. From there, React gained popularity quickly, and many
+                developers started using it for building user interfaces. One of the key features that set React apart
+                from
+                other front-end frameworks was its ability to render changes in real-time, making it ideal for building
+                dynamic web applications.
+            </li> <br>
+
+            <li>
+                React's popularity continued to grow, and in 2015, Facebook released React Native, a framework for
+                building native mobile applications using React. React Native uses the same principles and syntax as
+                React,
+                making it easy for developers to learn and use.
+            </li>
+            <br>
+            <li>
+                Today, React is widely used by companies and developers around the world, including Facebook,
+                Instagram, Airbnb, and Netflix, among many others. The library has also evolved significantly since its
+                initial release, with new features and improvements being added regularly.
+            </li>
+        </div>
+        <h2>Reactjs</h2>
+        <div class="ex">
+            <p>
+                React (also known as React.js or ReactJS) is a free and open-source front-end JavaScript library
+                for building user interfaces based on components. It is maintained by Meta (formerly Facebook) and a
+                community of individual developers and companies. <br><br>
+
+                React can be used to develop single-page, mobile, or server-rendered applications with frameworks like
+                Next.js. Because React is only concerned with the user interface and rendering components to the DOM,
+                React applications often rely on libraries for routing and other client-side functionality. <br><br> A
+                key
+                advantage of React is that it only rerenders those parts of the page that have changed, avoiding
+                unnecessary rerendering of unchanged DOM elements.
+            </p>
+            <h3>What is React??</h3>
+            <p>
+                React is a is a free and open-source front-end JavaScript library created by Facebook in 2013. <br><br>
+                React is used to build single-page applications. React is a tool for building UI components.<br><br>
+
+            </p>
+        </div>
+        <h2> How does React Work?</h2>
+        <div class="ex">
+
+            React creates a VIRTUAL DOM in memory. <br>
+            <br>
+            You know the browser create DOM directly, React creates a virtual DOM in memory, where it does all
+            the necessary manipulating, before making the changes in the browser DOM. <br>
+            <br>
+            React only changes what needs to be changed! <br>
+            <br>
+            React finds out what changes have been made, and changes only what needs to be changed. <br>
+            <h3>
+                <a target="_blank" href="./basic/v-dom.html">Differences between Real Dom and Virtual Dom</a>
+            </h3>
+        </div>
+        <h2>Setup</h2>
+        <div class="ex">
+            <p>Download Nodejs.</p>
+            <p>Set environment</p>
+            <p>node -v</p>
+            <p>npm -v</p>
+            <p>Open cmd and run following commond:- npm install -g create-react-app</p>
+            <p>Create a react app by following command :- npx create-react-app my-app</p>
+            <p>
+                cd my-app <br>
+                npm start
+            </p>
+            <img src="./image/runReact.png" alt="React folder structure image"
+                style="margin: auto; width: 100%; height: 600px;">
+        </div>
+        <h3>Explain folder structure. </h3>
+        <div class="ex">
+            <img src="./image/reactFolderStructur.png" alt="React folder structure image"
+                style="margin: auto; width: 100%; height: 500px;">
+        </div>
+        <h2>ECMAScript 6 (ES6)</h2>
+        <div class="ex">
+            <p>
+                ECMAScript was created to standardize JavaScript, and ES6 is the 6th version of ECMAScript, it was
+                published in 2015, and is also known as ECMAScript 2015. <br>
+                <br>
+                Why Should we Learn ES6? <br>
+                React uses ES6, and you should be familiar with some of the new features like: <br>
+                <br>
+                (1) Classes <br>
+                (2) Arrow Functions <br>
+                (3) Variables (let, const, var) <br>
+                (4) Array Methods like .map() <br>
+                (5) Destructuring <br>
+                (6) Modules <br>
+                (7) Ternary Operator <br>
+                (8) Spread Operator <br>
+            </p>
+        </div>
+        <h3>Classes</h3>
+        <div class="ex">
+            <p>
+                A class is a type of function, but instead of using the keyword function to initiate it, we use the
+                keyword class, and the properties are assigned inside a constructor() method.
+            </p>
+            <p>
+                (1) How can i create a class?? <br>
+                (2) How can i create a objects using the class??<br>
+                (3) How can i create a method in the class??
+            </p>
+            <div class="ex">
+                class Employee { <br>
+                &nbsp;&nbsp; constructor(name) { <br>
+                &nbsp;&nbsp; &nbsp;&nbsp; this.name = name; <br>
+                &nbsp;&nbsp; } <br>
+                &nbsp;&nbsp; work() { <br>
+                &nbsp;&nbsp; &nbsp;&nbsp; console.log("Nice work at all"); <br>
+                &nbsp;&nbsp; } <br>
+                } <br>
+                <br>
+                const employee1 = new Employee("Ajay"); <br>
+                <br>
+                document.write(employee1.name); <br>
+                employee1.work(); <br>
+            </div>
+            <h2>Class Inheritance</h2>
+            <p>
+                &bull; To create a class inheritance, use the extends keyword. <br><br>
+                &bull; The super() method refers to the parent class. <br><br>
+                &bull; A class created with a class inheritance inherits all the methods from another class:
+            </p>
+            <div class="ex">
+                class Shap { <br>
+                &nbsp;&nbsp; constructor(name) { <br>
+                &nbsp;&nbsp; &nbsp;&nbsp; this.shapName = name; <br>
+                &nbsp;&nbsp; } <br>
+                &nbsp;&nbsp; <br>
+                &nbsp;&nbsp; area() { <br>
+                &nbsp;&nbsp; &nbsp;&nbsp; console.log('I have a ' + this.shapName); <br>
+                &nbsp;&nbsp; } <br>
+                } <br>
+                <br>
+                class Circle extends Shap { <br>
+                &nbsp;&nbsp;&nbsp;&nbsp; constructor(name, r) { <br>
+                &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; super(name); <br>
+                &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; this.radius = r; <br>
+                &nbsp;&nbsp;&nbsp;&nbsp; } <br>
+                &nbsp;&nbsp;&nbsp;&nbsp; show() { <br>
+                &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; super.area(); <br>
+                &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; 
+                console.log("Area of "+ this.shapName+',  is a '+ (this.radius*this.radius*3.14))    <br>
+                &nbsp;&nbsp;&nbsp;&nbsp; } <br>
+                } <br>
+                <br>
+                const myShap = new Circle("Circle-1", 10); <br>
+                myShap.show(); <br>
+            </div>
+        </div>
+        <h2>Arrow Functions</h2>
+        <div class="ex">
+            Arrow functions is a shorter way to write a function. <br><br>
+            function FuncName(){ <br>
+                console.log("Abc") <br>
+            } <br>
+
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real DOM Vs Virtual DOM</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 20px;
+        }
+        .table-1{
+            overflow: auto;
+        }
+        .table-1 table ,tr,th,td{
+            border: 1px solid ;
+            border-collapse: collapse;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="main">
+        <div class="table-1">
+            <h2>DOM</h2>
+            <p>
+                DOM stands for Document Object Model it is the structural representation of the HTML Document. Real DOM is the actual structure represented in the User Interface while Virtual DOM is the memory representation of the same. It is a tree-like Structure consisting of all nodes in an HTML document DOM represents the Ul of your applications.
+            </p>
+            <h2>Differences between Real Dom and Virtual Dom</h2>
+            <table>
+                <colgroup>
+                    <col>
+                    <col>
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>
+                            <p dir="ltr" style="text-align: center;"><span>Real DOM</span></p>
+                        </th>
+                        <th>
+                            <p dir="ltr" style="text-align: center;"><span>Virtual DOM</span></p>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <p dir="ltr"><span>Real DOM represent actual structure of the webpage.</span></p>
+                        </td>
+                        <td>
+                            <p dir="ltr"><span>Virtual DOM represent the virtual/memory representation of the
+                                    Webpage.</span></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span>DOM manipulation is very expensive&nbsp;</span></td>
+                        <td><span>DOM manipulation is very easy&nbsp;</span></td>
+                    </tr>
+                    <tr>
+                        <td><span>There is too much memory wastage&nbsp;</span></td>
+                        <td><span>No memory wastage&nbsp;</span></td>
+                    </tr>
+                    <tr>
+                        <td><span>It updates Slow</span></td>
+                        <td><span>It updates fast</span></td>
+                    </tr>
+                    <tr>
+                        <td><span>It can directly update HTML</span></td>
+                        <td><span>It can’t update HTML directly&nbsp;</span></td>
+                    </tr>
+                    <tr>
+                        <td><span>&nbsp;Creates a new DOM if the element
+                                updates.</span></td>
+                        <td><span>Update the JSX if the element update&nbsp;</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span>It allows us to directly target any
+                                specific</span><br><span>node (HTML element)</span></td>
+                        <td><span>It can produce about 200,000 Virtual
+                                DOM</span><br><span>Nodes / Second.</span></td>
+                    </tr>
+                    <tr>
+                        <td><span>It represents the Ul of your application</span></td>
+                        <td><span>It is only a virtual representation of the
+                                DOM</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="image-1">
+            <img src="../image/RealDOM.jpg" alt="Real dom">
+            <!-- <figcaption>Real dom</figcaption> -->
+            <!-- <hr> -->
+            <img src="../image/VirualDOM.jpg" alt="virtual dom">
+            <!-- <figcaption>Virtual dom</figcaption> -->
+
+        </div>
+    </div>
+
+</body>
+
+</html>
