@@ -10,6 +10,7 @@
             box-sizing: border-box;
             font-family: Arial, Helvetica, sans-serif;
             font-size: 22px;
+            text-align: justify;
         }
 
         #main {
@@ -37,6 +38,15 @@
         }
 
         @media screen and (max-width : 600px) {
+            * {
+                font-size: 15px;
+                word-wrap: break-word;
+            }
+
+            img {
+                width: 100%;
+            }
+
             #main {
                 width: 100%
             }
@@ -391,8 +401,10 @@
                 <b>Changing the state Object :- </b> this.setState({name: "Vijay"});
                 <br><br>
                 <b>Props :- </b>
-                React components has a built-in state object. The state object is where you store property values that
-                belong to the component. When the state object changes, the component re-renders.
+                props stands for properties.
+                React components use props to communicate with each other.
+                Every parent component can pass some information to its child components by giving them props. <br>
+                Props are arguments passed into React components.Props are passed to components via HTML attributes.
                 <br><br>
                 <b>What are stateful components in React??</b> <br>
                 <b>Stateful Components :-</b>
@@ -525,7 +537,41 @@
                     &nbsp; &nbsp; } <br>
                     } <br>
                 </div>
+                <h2>
+                    What is pure component??
+                </h2>
+                <p>
+                    React JS Pure Components :
+                    In simple words, If the previous value of the state or props and the new value of the state or props
+                    are the same, the component will not re-render itself. Pure Components restricts the re-rendering
+                    when there is no use for re-rendering of the component.
+                </p>
+                <p class="border">
+                    import React, { Component, PureComponent } from 'react' <br>
+                    <br>
+                    export default class User extends PureComponent { <br>
+                    &nbsp;&nbsp; constructor() { <br>
+                    &nbsp;&nbsp; &nbsp;&nbsp; super(); <br>
+                    &nbsp;&nbsp; &nbsp;&nbsp; this.state = { count: 0 } <br>
+                    &nbsp;&nbsp; } <br>
+                    &nbsp;&nbsp; render() { <br>
+                    &nbsp;&nbsp; &nbsp;&nbsp; console.log("User parrent Check rendering") <br>
+                    &nbsp;&nbsp; &nbsp;&nbsp; return ( <br>
+                    &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &lt;&gt; <br>
+                    &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &lt;div&gt;User Component :-
+                    {this.state.count}&lt;/div&gt; <br>
+                    &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &lt;button onClick={() =&gt; this.setState({
+                    count: this.state.count })}&gt;Count update&lt;/button&gt; <br>
+                    &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; {/*&lt;button onClick={() =&gt; this.setState({
+                    count: this.state.count +1 })}&gt;Count update&lt;/button&gt;*/} <br>
+                    &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &lt;/&gt; <br>
+                    &nbsp;&nbsp; &nbsp;&nbsp; ) <br>
+                    &nbsp;&nbsp; } <br>
+                    } <br>
+
+                </p>
             </div>
+
         </div>
         <h2>Lifecycle of Components</h2>
         <p>
@@ -740,9 +786,60 @@
         <div class="ex">
             When a component is removed from the DOM, then call the unmounting method. unmounting as React likes to call
             componentWillUnmount() method. <br>
-            <br>
-            componentWillUnmount() <br><br>
             The componentWillUnmount method is called when the component is about to be removed from the DOM. <br>
+            <p class="border">
+                import React from 'react'; <br>
+                <br>
+                class Child extends React.Component { <br>
+                &nbsp;&nbsp; componentWillUnmount() { <br>
+                &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; alert("Child component is unmounted."); <br>
+                &nbsp;&nbsp; } <br>
+                &nbsp;&nbsp; render() { <br>
+                &nbsp;&nbsp; &nbsp;&nbsp; return ( <br>
+                &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+                &lt;h1&gt;Child component!&lt;/h1&gt; <br>
+                &nbsp;&nbsp; &nbsp;&nbsp; ); <br>
+                &nbsp;&nbsp; } <br>
+                } <br>
+
+                export default Child;
+
+            </p>
+            <p class="border">
+                import React from 'react'; <br>
+                import Child from './Child'; <br>
+                <br>
+                class Unmount extends React.Component { <br>
+                &nbsp;&nbsp; constructor(props) { <br>
+                &nbsp;&nbsp; &nbsp;&nbsp; super(props); <br>
+                &nbsp;&nbsp; &nbsp;&nbsp; this.state = { show: true }; <br>
+                &nbsp;&nbsp; } <br>
+                &nbsp;&nbsp; <br>
+                &nbsp;&nbsp; render() { <br>
+                &nbsp;&nbsp;&nbsp;&nbsp; let myComponent; <br>
+                &nbsp;&nbsp;&nbsp;&nbsp; if (this.state.show) { <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; myComponent =
+                &lt;Child /&gt;; <br>
+                &nbsp;&nbsp;&nbsp;&nbsp; }; <br>
+                &nbsp;&nbsp;&nbsp;&nbsp; return ( <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div&gt; <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; {myComponent} <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &lt;button type="button"
+                onClick={()=&gt;this.setState({ show: !this.state.show })}&gt; <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; {this.state.show?"Delete Child
+                component":"Create Child component"} <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &lt;/button&gt; <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/div&gt; <br>
+                &nbsp;&nbsp;&nbsp;&nbsp; ); <br>
+                &nbsp;&nbsp; } <br>
+                } <br>
+
+                export default Unmount;
+            </p>
+        </div>
+        <h2>React Events</h2>
+        <div class="ex">
+            
         </div>
     </div>
 </body>
