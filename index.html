@@ -31,6 +31,11 @@
             padding: 10px;
         }
 
+        .border {
+            border: 1px solid;
+            padding: inherit;
+        }
+
         @media screen and (max-width : 600px) {
             #main {
                 width: 100%
@@ -212,8 +217,8 @@
                 &nbsp;&nbsp;&nbsp;&nbsp; } <br>
                 &nbsp;&nbsp;&nbsp;&nbsp; show() { <br>
                 &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; super.area(); <br>
-                &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; 
-                console.log("Area of "+ this.shapName+',  is a '+ (this.radius*this.radius*3.14))    <br>
+                &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+                console.log("Area of "+ this.shapName+', is a '+ (this.radius*this.radius*3.14)) <br>
                 &nbsp;&nbsp;&nbsp;&nbsp; } <br>
                 } <br>
                 <br>
@@ -224,10 +229,520 @@
         <h2>Arrow Functions</h2>
         <div class="ex">
             Arrow functions is a shorter way to write a function. <br><br>
+            <b>function with function keyword. </b> <br>
             function FuncName(){ <br>
-                console.log("Abc") <br>
-            } <br>
+            console.log("Abc") <br>
+            } <br> <br>
+            <b> function with Arrow function.</b> <br>
+            const FuncName = () => { <br>
+            console.log("Abc") <br>
+            } <br><br>
 
+            <b> Arrow function with parameter.</b> <br>
+            const FuncName = (name) => { <br>
+            console.log("Abc",name) <br>
+            } <br>
+            <br>
+            <b> function with Arrow function more shorter.</b> <br>
+            const FuncName = name => console.log("Abc") <br>
+
+        </div>
+        <h2> JavaScript Modules</h2>
+        <div class="ex">
+            JavaScript modules allow you to break up your code into separate files. <br>
+            This makes it easier to maintain the code. <br>
+            ECMAScript Modules rely on the import and export statements. <br> <br>
+            <p class="border">
+                person.js<br>
+                export const name = "Jayesh" <br>
+                export const age = 30; <br> <br>
+                // export {name, age}
+            </p>
+            <p class="border">
+                infomation.js<br>
+                import {name, age} from "./person.js" <br>
+                console.log(name, age);
+
+                const info = () => { <br>
+                &nbsp;&nbsp; console.log(name + ' is ' + age + 'years old.';) <br>
+                }; <br><br>
+                export default info;
+            </p>
+            <p class="border">
+                personInfo.js<br>
+                import info from "./ infomation.js" <br>
+                Info()
+            </p>
+        </div>
+        <h2>What is JSX?</h2>
+        <div class="ex">
+            <p>
+                JSX stands for JavaScript XML.
+
+                JSX makes it easier to write and add HTML in React.
+
+                JSX allows us to write HTML elements in JavaScript and place them in the DOM without any createElement()
+                and/or appendChild() methods.
+
+                JSX converts HTML tags into react elements.
+            </p>
+            <div class="ex">
+                import React from 'react'; <br>
+                import ReactDOM from 'react-dom/client'; <br>
+                <br>
+                const ele = &lt;h1&gt;This is jsx syntax in react. Run js code in react with the help of curly brace.
+                <br> like :- { 1 + 2 - 3 * 4 } &lt;/h1&gt;; <br>
+                <br>
+                const root = ReactDOM.createRoot(document.getElementById('demo')); <br>
+                root.render(ele); <br>
+            </div>
+
+            <!-- ............without jsx............ -->
+
+            <!-- <h2>Without use jsx</h2>
+            <div class="ex">
+                import React from 'react'; <br>
+                import ReactDOM from 'react-dom/client'; <br>
+                <br>
+                const myElement = React.createElement('h1', {}, 'I do not use JSX!'); <br>
+                <br>
+                const root = ReactDOM.createRoot(document.getElementById('root')); <br>
+                root.render(myElement); <br>
+            </div> -->
+            <ul>
+                <li>Elements Must be Closed like image tag</li>
+                <li>Attribute class = className</li>
+                <li>React supports if statements, but not inside JSX.</li>
+                <li>Use ternary expressions inside jsx with help of {(condition) ? "True":"False"}
+                    <br> Example:- const myElement = &lt;h1&gt;{(x) &lt; 10 ? "True condition" : "False
+                    condition"}&lt;/h1&gt;
+                </li>
+            </ul>
+        </div>
+        <h2>What is components in react??</h2>
+        <div class="ex">
+            <p>
+                Components are independent and reusable bits of code. They serve the same purpose as JavaScript
+                functions, but work in isolation and return HTML. Components come in two types, <br>
+                (1) Class component <br>
+                (2) Function component. <br> <br>
+
+                <b>Class component :- </b> <br>
+                React Class components have a built-in state object. You might have noticed that we used state earlier
+                in the component constructor section. The state object is where you store property values that belongs
+                to the component. When the state object changes, the component re-renders. <br>
+
+                A class component must include the extends React.Component statement. This statement creates an
+                inheritance to React.Component, and gives your component access to React.Component's functions.
+
+            </p>
+            <h3>Example of class component :-</h3>
+            <div class="ex">
+                class Abc extends React.Component { <br>
+                &nbsp;&nbsp; render() { <br>
+                &nbsp;&nbsp;&nbsp;&nbsp; return &lt;h1&gt;Hello, I am a class components!!!&lt;/h1&gt;; <br>
+                &nbsp;&nbsp; } <br>
+                } <br>
+            </div>
+            <br>
+            <b>Class component :- </b> <br>
+            <div>
+                React functional components are just normal JavaScript functions; we can create them using specific
+                function keywords. Most developers create functional components using the Arrow function. The functional
+                component's primary purpose is to render the view and the data to the browser.
+            </div>
+            <div class="ex">
+                function Abc() { <br>
+                &nbsp;&nbsp; return &lt;h1&gt;Hello, I am a function components!!!&lt;/h1&gt;; <br>
+                } <br>
+            </div>
+        </div>
+        <h2>React Class Components</h2>
+        <div class="ex">
+            <p>
+                Before React 16.8, Class componentshas state and lifecycle on a React component.
+                Function components were considered "state-less". <br>
+                <br>
+                By using hooks, Function components are equivalent to Class components. <br>
+            </p>
+            <h3>Class component with constructor</h3>
+            <p>
+                The constructor() function will be called when the component gets initiated. <br>
+                Properties are initiate in the constructor function. <br>
+                In React, component properties should be kept in an object called state. <br>
+            </p>
+            <div class="ex">
+                class Employee extends React.Component { <br>
+                &nbsp; &nbsp; constructor() { <br>
+                &nbsp; &nbsp; &nbsp; &nbsp; super(); <br>
+                &nbsp; &nbsp; &nbsp; &nbsp; this.state = {name: "Jay"}; <br>
+                &nbsp; &nbsp; } <br>
+                &nbsp; &nbsp; render() { <br>
+                &nbsp; &nbsp; &nbsp; &nbsp; return &lt;h2&gt;I am a empoyee and my name is :-
+                {this.state.name}!&lt;/h2&gt;; <br>
+                &nbsp; &nbsp; } <br>
+                } <br>
+            </div>
+            <p>
+                <b>State :- </b>
+                React components has a built-in state object. The state object is where you store property values that
+                belong to the component. When the state object changes, the component re-renders.
+                <br>
+                <b>Changing the state Object :- </b> this.setState({name: "Vijay"});
+                <br><br>
+                <b>Props :- </b>
+                React components has a built-in state object. The state object is where you store property values that
+                belong to the component. When the state object changes, the component re-renders.
+                <br><br>
+                <b>What are stateful components in React??</b> <br>
+                <b>Stateful Components :-</b>
+
+                They are capable of tracking changes, have knowledge of past, current, and potential future changes in
+                themselves, and render their output accordingly. Stateful components are usually class components, but
+                with the introduction of hooks, functional components can also maintain state. <br><br>
+                <b>What are stateless components in React??</b> <br>
+                <b>Stateless Components :-</b>
+                A stateless component, also known as a functional component, is a fundamental concept in React that
+                represents a UI element without any internal state management. In simpler terms, a stateless component
+                is a function that takes in props as input and returns JSX (JavaScript XML) to describe the UI.
+            </p>
+            <h3>Differences b/w <u>statefull and stateless</u> components??</h3>
+            <p class="ex">
+                What are Stateful Components? <br>
+                Stateful components, also known as class components (traditionally), are those that manage their own
+                state. In React, "state" refers to an object that determines how a component renders and behaves.
+                Stateful components are responsible for keeping track of changing data that affects the render output of
+                the component. <br>
+                <br>
+                Characteristics of Stateful Components: <br>
+                <br>
+                They can hold and manage local state. <br>
+                They have lifecycle methods (like componentDidMount, componentDidUpdate, etc.). <br>
+                Usually more complex than stateless components. <br>
+                Example Use Case: <br>
+                A classic example is a form input. Let's consider a login form with email and password fields. The form
+                component needs to track the values of these fields, handle changes, and potentially control form
+                submission behavior. This state management necessitates the use of a stateful component. <br>
+                <br>
+                What are Stateless Components? <br>
+                Stateless components, also referred to as functional components, do not hold or manage local state. They
+                simply accept data via props and render UI elements. With the introduction of Hooks in React 16.8,
+                functional components have become more powerful, allowing them to use state and other React features
+                without being class-based. <br>
+                <br>
+                Characteristics of Stateless Components: <br>
+                <br>
+                Do not have their own state (although, with Hooks, this is less clear-cut). <br>
+                They are usually simpler and used for presenting static UI elements. <br>
+                Easier to test and maintain due to their simplicity. <br>
+                Example Use Case: <br>
+                A good example is a UI component like a button or a display label. These components receive all the data
+                they need via props and render accordingly. For instance, a Button component might accept props like
+                onClick, label, and style but does not manage any state internally. <br>
+                <br>
+                The Evolution with Hooks: <br>
+                With the advent of Hooks, the line between stateful and stateless components has blurred. Functional
+                components can now use useState, useEffect, and other hooks to manage state and side effects,
+                traditionally the domain of class components. <br>
+                <br>
+                When to Use Each: <br>
+                <br>
+                Stateful Components: Use them when you need to manage state, lifecycle methods, or when dealing with
+                complex UI logic that requires the component to keep track of changes over time. <br>
+                <br>
+                Stateless Components: Ideal for presentational components that focus solely on the UI and do not require
+                any state management. They are more readable and easier to test. <br>
+                <br>
+                Conclusion <br>
+                Understanding the difference between stateful and stateless components is pivotal in React development.
+                While stateful components are essential for interactive elements that require data tracking, stateless
+                components offer simplicity and efficiency for static UI elements. With the introduction of Hooks, React
+                has provided more flexibility, allowing developers to use functional components in more complex
+                scenarios. This distinction not only helps in organizing the codebase but also in optimizing the
+                performance and maintainability of React applications. <br>
+            </p>
+            <div class="ex">
+                <b>State management</b>
+                <div class="ex">
+                    class Employee extends React.Component { <br>
+                    &nbsp; &nbsp; constructor() { <br>
+                    &nbsp; &nbsp; &nbsp; &nbsp; super(); <br>
+                    &nbsp; &nbsp; &nbsp; &nbsp; this.state = { <br>
+                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; name: "Jay",<br>
+                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; count: 0,<br>
+                    &nbsp; &nbsp;}; <br>
+                    &nbsp; &nbsp; } <br>
+                    &nbsp; &nbsp; update() { <br>
+                    &nbsp; &nbsp; &nbsp; &nbsp; this.setState({ <br>
+                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; name: "Vijay",<br>
+                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; count: this.state.count+1,<br>
+                    &nbsp; &nbsp;}); <br>
+
+                    &nbsp; &nbsp; } <br>
+
+                    &nbsp; &nbsp; render() { <br>
+                    &nbsp; &nbsp; &nbsp; &nbsp; return( <br>
+                    &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &lt;&gt; <br>
+                    &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &lt;h2&gt;Hello I am :-
+                    {this.state.name}!&lt;/h2&gt; <br>
+                    &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &lt;h2&gt;Count is :-
+                    {this.state.count}!&lt;/h2&gt; <br>
+                    &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &lt;button
+                    onclick="{()=>this.update()}"&gt;Click me&lt;/button&gt; <br>
+                    &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &lt;/&gt; <br>
+
+                    &nbsp; &nbsp; &nbsp; &nbsp;)<br>
+                    &nbsp; &nbsp; } <br>
+                    } <br>
+                </div> <br>
+                <b>Hide and show OR Toggle Elememt</b>
+                <div class="ex">
+                    class Employee extends React.Component { <br>
+                    &nbsp; &nbsp; constructor() { <br>
+                    &nbsp; &nbsp; &nbsp; &nbsp; super(); <br>
+                    &nbsp; &nbsp; &nbsp; &nbsp; this.state = { <br>
+                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; show: true<br>
+                    &nbsp; &nbsp;}; <br>
+                    &nbsp; &nbsp; } <br>
+                    &nbsp; &nbsp; update() { <br>
+                    &nbsp; &nbsp; &nbsp; &nbsp; this.setState({ <br>
+                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; show: !this.state.show<br>
+                    &nbsp; &nbsp;}); <br>
+
+                    &nbsp; &nbsp; } <br>
+
+                    &nbsp; &nbsp; render() { <br>
+                    &nbsp; &nbsp; &nbsp; &nbsp; return( <br>
+                    &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &lt;&gt; <br>
+                    &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &lt;h2&gt;Toggle elements&lt;/h2&gt; <br>
+                    &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; { (this.state.show) ? &lt;h2&gt;Hide and
+                    show!&lt;/h2&gt; : null } <br>
+                    &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &lt;button
+                    onclick="{()=>this.update()}"&gt;Click me&lt;/button&gt; <br>
+                    &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &lt;/&gt; <br>
+
+                    &nbsp; &nbsp; &nbsp; &nbsp;)<br>
+                    &nbsp; &nbsp; } <br>
+                    } <br>
+                </div>
+            </div>
+        </div>
+        <h2>Lifecycle of Components</h2>
+        <p>
+            Each component has a lifecycle method which you can monitor and manipulate during its three main phases.
+            <br>
+
+            (1). Mounting, <br>(2). Updating, <br> (3). Unmounting. <br>
+            <img src="./image/lcm.jpg" alt="LCM">
+        </p>
+        <!-- ....................Mounting phase.................... -->
+        <h2>Mounting</h2>
+        <div class="ex">
+            Mounting means putting elements into the DOM. <br><br>
+
+            React has four built-in methods that gets called, in this order, when mounting a component: <br><br>
+
+            (1). constructor() <br>
+            (2). getDerivedStateFromProps() <br>
+            (3). render() <br>
+            (4). componentDidMount() <br><br>
+
+            The render() method is required and will always be called, the others are optional and will be called if you
+            define them.
+
+            <h2>constructor</h2>
+            <div class="ex">
+                The constructor() method is called, when the component is initiated. <br>
+
+                <!-- The constructor() method is called with the props, as arguments, and you should always start by calling the super(props) before anything else, this will initiate the parent's constructor method and allows the component to inherit methods from its parent (React.Component). -->
+                import React from 'react'; <br>
+                <br>
+                class Header extends React.Component { <br>
+                &nbsp;&nbsp; constructor(props) { <br>
+                &nbsp;&nbsp; &nbsp;&nbsp; super(props); <br>
+                &nbsp;&nbsp; &nbsp;&nbsp; this.state = {favoritecolor: "red"}; <br>
+                &nbsp;&nbsp; } <br>
+                &nbsp;&nbsp; render() { <br>
+                &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; return ( <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;h1&gt;My Favorite Color is
+                {this.state.favoritecolor}&lt;/h1&gt; <br>
+                &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; ); <br>
+                &nbsp;&nbsp; } <br>
+                } <br>
+            </div>
+            <h2>getDerivedStateFromProps method</h2>
+            <p>
+                The getDerivedStateFromProps() method is called right before rendering the element(s) in the DOM. <br>
+                This is the natural place to set the state object based on the initial props. <br>
+                It takes state as an argument, and returns an object with changes to the state. <br>
+            </p>
+            <h2>render method</h2>
+            <p>
+                The render() method is required, and is the method that actually outputs the HTML to the DOM.
+
+            </p>
+            <h2>componentDidMount</h2>
+            <p>
+                The componentDidMount() method is called after the component is rendered.
+            </p>
+            <div class="ex">
+                <p class="border">
+                    import React from 'react'; <br>
+                    export default class Header extends React.Component { <br>
+                    &nbsp;&nbsp; constructor(props) { <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp; super(props); <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp; this.state = { favoritecolor: "Blue", color: "green" }; <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp; console.log("first") <br>
+                    &nbsp;&nbsp; } <br>
+                    &nbsp;&nbsp; static getDerivedStateFromProps(props, state) { <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp; console.log("Second") <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp; <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp; return { favoritecolor: props.color }; <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp; // return {favoritecolor: state.color }; <br>
+                    &nbsp;&nbsp; } <br>
+
+                    &nbsp;&nbsp; componentDidMount() { <br>
+                    &nbsp;&nbsp; &nbsp;&nbsp; console.log("Component did mount") <br>
+                    &nbsp;&nbsp; } <br>
+
+                    &nbsp;&nbsp; render() { <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp; console.log("Third") <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp; return ( <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;h1&gt;My Favorite Color is
+                    {this.state.favoritecolor}&lt;/h1&gt; <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp; ); <br>
+                    &nbsp;&nbsp; } <br>
+                    } <br>
+                </p>
+            </div>
+        </div>
+        <!-- ....................Updating phase.................... -->
+
+        <h2>Updating</h2>
+        <div class="ex">
+            Whenever there is a change in a component's state or props so The component is updated <br>
+            <br>
+            React has five built-in methods that gets called, in this order, when a component is updated: <br>
+            <br>
+            (1). getDerivedStateFromProps() <br>
+            (2). shouldComponentUpdate() <br>
+            (3). render() <br>
+            (4). getSnapshotBeforeUpdate() <br>
+            (5). componentDidUpdate() <br><br>
+
+            <div class="ex">
+                <h2>getDerivedStateFromProps method()</h2>
+                <p>
+                    The getDerivedStateFromProps method is called. This is the first method that is called when a
+                    component
+                    gets updated. <br>
+                    This is still the natural place to set the state object based on the initial props. <br>
+                    In this example has a button, click it to change the state objrct, will update
+                    getDerivedStateFromProps().
+                </p>
+                <h2>shouldComponentUpdate()</h2>
+                <p>
+
+                    In the shouldComponentUpdate() method you can return a Boolean value that specifies whether React
+                    should continue with the rendering or not. <br>
+                    The default value is true. <br>
+                    The example below shows what happens when the shouldComponentUpdate() method returns false: Not run
+
+                </p>
+                <h2>render()</h2>
+                <p>
+                    The render() method is of course called when a component gets updated, it has to re-render the HTML
+                    to the DOM, with the new changes.
+                </p>
+                <p class="border">
+                    import React from 'react'; <br>
+                    <br>
+                    export default class Update extends React.Component { <br><br>
+                    &nbsp; &nbsp; constructor(props) { <br>
+                    &nbsp; &nbsp;&nbsp; &nbsp; super(props); <br>
+                    &nbsp; &nbsp;&nbsp; &nbsp; this.state = {color: "Yellow"}; <br>
+                    &nbsp; &nbsp;&nbsp; &nbsp;console.log("m1 Constructor :-",this.state.color) <br>
+                    &nbsp; &nbsp; } <br><br>
+
+                    &nbsp; &nbsp; static getDerivedStateFromProps(props, state) { <br>
+                    &nbsp; &nbsp;&nbsp; &nbsp; console.log("m2 getDerivedStateFromProps :-",state.color) <br>
+                    &nbsp; &nbsp;&nbsp; &nbsp; return {color: props.myColor }; <br>
+                    &nbsp; &nbsp; } <br><br>
+
+                    &nbsp; &nbsp; shouldComponentUpdate() { <br>
+                    &nbsp; &nbsp; &nbsp; &nbsp; console.log("up2 shouldComponentUpdate :-") <br>
+                    &nbsp; &nbsp; &nbsp; &nbsp; return false; //not run render()<br>
+                    &nbsp; &nbsp; } <br><br>
+
+                    &nbsp; &nbsp; changeColor = () => { <br>
+                    &nbsp; &nbsp;&nbsp; &nbsp; this.setState({color: "blue"}); <br>
+                    &nbsp; &nbsp;&nbsp; &nbsp; console.log(" changecolor :-",this.state.color) <br>
+                    &nbsp; &nbsp; } <br><br>
+
+                    &nbsp; &nbsp;&nbsp; &nbsp; render() { <br>
+                    &nbsp; &nbsp;&nbsp; &nbsp; console.log("m3 render :-",this.state.color) <br>
+                    &nbsp; &nbsp; <br>
+                    &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; return ( <br>
+                    &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &lt;div&gt; <br>
+                    &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &lt;h1&gt;My Favorite Color is
+                    {this.state.color}&lt;/h1&gt; <br>
+                    &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &lt;button type="button"
+                    onClick={this.changeColor}&gt;Change
+                    color&lt;/button&gt;
+                    <br>
+                    &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &lt;/div&gt; <br>
+                    &nbsp; &nbsp;&nbsp; &nbsp; ); <br>
+                    &nbsp; &nbsp; } <br>
+                    } <br>
+                </p>
+                <h2>shouldComponentUpdate :- return true ==> run render()</h2>
+                <p class="border">
+                    import React from 'react'; <br>
+                    <br>
+                    export default class Update extends React.Component { <br><br>
+                    &nbsp; &nbsp; constructor(props) { <br>
+                    &nbsp; &nbsp;&nbsp; &nbsp; super(props); <br>
+                    &nbsp; &nbsp;&nbsp; &nbsp; this.state = {color: "Yellow"}; <br>
+                    &nbsp; &nbsp;&nbsp; &nbsp;console.log("m1 Constructor :-",this.state.color) <br>
+                    &nbsp; &nbsp; } <br><br>
+
+                    &nbsp; &nbsp; shouldComponentUpdate() { <br>
+                    &nbsp; &nbsp; &nbsp; &nbsp; console.log("up2 shouldComponentUpdate :-") <br>
+                    &nbsp; &nbsp; &nbsp; &nbsp; return true; // run render()<br>
+                    &nbsp; &nbsp; } <br><br>
+
+                    &nbsp; &nbsp; changeColor = () => { <br>
+                    &nbsp; &nbsp;&nbsp; &nbsp; this.setState({color: "blue"}); <br>
+                    &nbsp; &nbsp;&nbsp; &nbsp; console.log(" changecolor :-",this.state.color) <br>
+                    &nbsp; &nbsp; } <br><br>
+
+                    &nbsp; &nbsp;&nbsp; &nbsp; render() { <br>
+                    &nbsp; &nbsp;&nbsp; &nbsp; console.log("m3 render :-",this.state.color) <br>
+                    &nbsp; &nbsp; <br>
+                    &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; return ( <br>
+                    &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &lt;div&gt; <br>
+                    &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &lt;h1&gt;My Favorite Color is
+                    {this.state.color}&lt;/h1&gt; <br>
+                    &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &lt;button type="button"
+                    onClick={this.changeColor}&gt;Change
+                    color&lt;/button&gt;
+                    <br>
+                    &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &lt;/div&gt; <br>
+                    &nbsp; &nbsp;&nbsp; &nbsp; ); <br>
+                    &nbsp; &nbsp; } <br>
+                    } <br>
+                </p>
+            </div>
+        </div>
+
+        <!-- ....................Unmounting phase.................... -->
+        <h2>Unmounting</h2>
+        <div class="ex">
+            When a component is removed from the DOM, then call the unmounting method. unmounting as React likes to call
+            componentWillUnmount() method. <br>
+            <br>
+            componentWillUnmount() <br><br>
+            The componentWillUnmount method is called when the component is about to be removed from the DOM. <br>
         </div>
     </div>
 </body>
