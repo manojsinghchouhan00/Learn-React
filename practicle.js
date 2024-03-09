@@ -21,3 +21,4 @@ class Shap {
  
  const myShap = new Circle("Circle-1", 10);
  myShap.show();
+ 

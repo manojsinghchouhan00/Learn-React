@@ -355,7 +355,7 @@
                 } <br>
             </div>
             <br>
-            <b>Class component :- </b> <br>
+            <b>function component :- </b> <br>
             <div>
                 React functional components are just normal JavaScript functions; we can create them using specific
                 function keywords. Most developers create functional components using the Arrow function. The functional
@@ -700,6 +700,26 @@
                     The render() method is of course called when a component gets updated, it has to re-render the HTML
                     to the DOM, with the new changes.
                 </p>
+
+                <h2>getSnapshotBeforeUpdate()</h2>
+                <p>
+                    &bull; In the getSnapshotBeforeUpdate() method you have access to the props and state before the
+                    update,
+                    meaning that even after the update, you can check what the values were before the update.
+                    <br> <br>
+                    &bull; If the getSnapshotBeforeUpdate() method is present, you should also include the
+                    componentDidUpdate()
+                    method, otherwise you will get an error.
+                </p>
+                <h2>componentDidUpdate()</h2>
+                <p>
+                    The componentDidUpdate method is called after the component is updated in the DOM.
+                    <br><br>
+                    When the component is mounting it is rendered with the favorite color "red".
+                    <br><br>
+                    When the component has been mounted, a timer changes the state, and the color becomes "yellow".
+                </p>
+
                 <p class="border">
                     import React from 'react'; <br>
                     <br>
@@ -778,6 +798,45 @@
                     &nbsp; &nbsp; } <br>
                     } <br>
                 </p>
+                <p class="border">
+                    import React from 'react'; <br>
+
+                    export default class Csbu_CDM extends React.Component { <br>
+                    &nbsp;&nbsp; constructor(props) { <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp; super(props); <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp; this.state = { favoritecolor: "blue" }; <br>
+                    &nbsp;&nbsp; } <br>
+                    &nbsp;&nbsp; componentDidMount() { <br>
+                    &nbsp;&nbsp; &nbsp;&nbsp; console.log("CDM", this.state.favoritecolor) <br>
+                    &nbsp;&nbsp; &nbsp;&nbsp; setTimeout(() => { <br>
+                    &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; this.setState({ favoritecolor: "green" }) <br>
+                    &nbsp;&nbsp; &nbsp;&nbsp; }, 3000) <br>
+                    &nbsp;&nbsp; } <br>
+                    &nbsp;&nbsp; getSnapshotBeforeUpdate(prevProps, prevState) { <br>
+                    &nbsp;&nbsp; &nbsp;&nbsp; console.log("gsbu", prevProps, prevState) <br>
+                    &nbsp;&nbsp; &nbsp;&nbsp; document.getElementById("div1").innerHTML = <br>
+                    &nbsp;&nbsp; &nbsp;&nbsp; "Before the update, the favorite was " + prevState.favoritecolor; <br>
+                    &nbsp;&nbsp; &nbsp;&nbsp; return "Man"; <br>
+                    &nbsp;&nbsp; } <br>
+                    &nbsp;&nbsp; componentDidUpdate() { <br>
+                    &nbsp;&nbsp; &nbsp;&nbsp; console.log("CDU") <br>
+                    &nbsp;&nbsp; &nbsp;&nbsp; document.getElementById("div2").innerHTML = <br>
+                    &nbsp;&nbsp; &nbsp;&nbsp; "The updated favorite is " + this.state.favoritecolor; <br>
+                    &nbsp;&nbsp; } <br>
+                    &nbsp;&nbsp; render() { <br>
+                    &nbsp;&nbsp; &nbsp;&nbsp; console.log("render") <br>
+                    &nbsp;&nbsp; &nbsp;&nbsp; return ( <br>
+                    &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &lt;div&gt; <br>
+                    &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &lt;h1&gt;My Favorite Color is
+                    {this.state.favoritecolor}&lt;/h1&gt; <br>
+                    &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &lt;div id="div1"&gt;&lt;/div&gt; <br>
+                    &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &lt;div id="div2"&gt;&lt;/div&gt; <br>
+                    &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &lt;/div&gt; <br>
+                    &nbsp;&nbsp; &nbsp;&nbsp; ); <br>
+                    &nbsp;&nbsp; } <br>
+                    } <br>
+
+                </p>
             </div>
         </div>
 
@@ -838,9 +897,428 @@
             </p>
         </div>
         <h2>React Events</h2>
+
         <div class="ex">
-            
+            <p>React has the same events as HTML. like :- click, change, mouseover etc.</p>
+            <h3>Add event in react</h3>
+            <p>
+                React events are written in camelCase syntax: <br><br>
+
+                onclick ==> onClick
+            </p>
+            <p class="border">
+                import React from 'react'; <br>
+                import ReactDOM from 'react-dom/client'; <br><br>
+
+                function Football() { <br>
+                &nbsp;&nbsp;&nbsp;&nbsp; const shoot = () => { <br>
+                &nbsp;&nbsp;&nbsp;&nbsp; alert("Great Shot!"); <br>
+                &nbsp;&nbsp; } <br>
+
+                &nbsp;&nbsp; return ( <br>
+                &nbsp;&nbsp;&nbsp;&nbsp; &lt;button onClick={shoot}&gt;Take the shot!&lt;/button&gt; <br>
+                &nbsp;&nbsp; ); <br>
+                } <br>
+            </p>
         </div>
+        <h2>React listing</h2>
+        <div class="ex">
+            import React, { Component } from 'react' <br>
+
+            export default class List extends Component { <br>
+
+            &nbsp;&nbsp; render() { <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; let arr = ["Tea", "Cofee", "Samosa", "Pizza", "Water bottle"]; <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; let arr1 = [ <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; { nam: "Jay", age: 20, course: "javascript" }, <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; { nam: "Vijay", age: 22, course: "Python" }, <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; { nam: "Ajay", age: 25, course: "java" }, <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; { nam: "Kumar", age: 21, course: "C++" }, <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; { nam: "Vinay", age: 26, course: ".Net" }, <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; { nam: "Avinash", age: 30, course: "React" }, <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; { nam: "Ram", age: 23, course: "Angular" }, <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; ] <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; return ( <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div&gt; <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;h1&gt;Listing with react&lt;/h1&gt; <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;ul&gt; <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; { <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; arr.map((item, i) =&gt; &lt;li key={i}&gt;
+            {item}&lt;/li&gt;) <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/ul&gt; <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;h2&gt;Listing With object ??&lt;/h2&gt; <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;h3&gt;Table of student&lt;/h3&gt; <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;table border={"1"} cellPadding="10px"&gt; <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;thead&gt; <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;tr&gt; <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;th&gt;S.No.&lt;/th&gt; <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;th&gt;Name&lt;/th&gt; <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;th&gt;Age&lt;/th&gt; <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;th&gt;Cource&lt;/th&gt; <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/tr&gt; <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/thead&gt; <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;tbody&gt; <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; { <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; arr1.map((item, i) =&gt; { <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; return &lt;tr key={i}&gt; <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &lt;td&gt;{i + 1}&lt;/td&gt; <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &lt;td&gt;{item.nam}&lt;/td&gt;
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &lt;td&gt;{item.age}&lt;/td&gt;
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &lt;td&gt;{item.course}&lt;/td&gt;
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &lt;/tr&gt; <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }) <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/tbody&gt; <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/table&gt; <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/div&gt; <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; ) <br>
+            &nbsp;&nbsp; } <br>
+            } <br>
+
+        </div>
+        <h2>React form</h2>
+        <div class="ex">
+            import { Component } from "react"; <br>
+            <br>
+            export default class MyForm2 extends Component { <br>
+            &nbsp;&nbsp; constructor() { <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; super(); <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; this.state = { <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; fname: "", <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; lname: "" <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; } <br>
+            &nbsp;&nbsp; } <br>
+            &nbsp;&nbsp; render() { <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; const handleSubmit = (event) => { <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; event.preventDefault(); <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // document.write(`I am <u> ${this.state.fname} ${this.state.lname}
+            </u>`); <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; console.log(`I am ${this.state.fname} ${this.state.lname}.`); <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // alert(`The name you entered was: ${this.state.fname}
+            ${this.state.lname}`); <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; } <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; return ( <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt; &gt; <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;h1&gt;Form 2 without form tag in react&lt;/h1&gt; <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;label&gt;Enter your name: <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;input <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; type="text" <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; value={this.state.fname} <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; onChange={(e) =&gt; this.setState({ fname:
+            e.target.value })} <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /&gt; <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/label&gt; <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;label&gt;Enter your name: <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;input <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; type="text" <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; value={this.state.lname} <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; onChange={(e) =&gt; this.setState({ lname:
+            e.target.value })} <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /&gt; <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/label&gt; <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;button onClick={handleSubmit}&gt;submit&lt;/button&gt;
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/&gt; <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; ) <br>
+            &nbsp;&nbsp; } <br>
+            }
+        </div>
+        <h2>Styling in React Using CSS</h2>
+        <div class="ex">
+            <h3>Inline Styling</h3>
+            <p class="border">
+                To style an element with the inline style attribute, the value must be a JavaScript object:- <br>
+                like :- &lt;h1 style={{color: "red"}}&gt;Inline styling!!&lt;/h1&gt;
+            </p>
+
+            <h3>JavaScript Object</h3>
+            <p class="border">
+                You can also create an object with styling information, and refer to it in the style attribute :- <br>
+                const myStyle = { <br>
+                &nbsp;&nbsp; backgroundColor: "black", <br>
+                &nbsp;&nbsp; color: "white", <br>
+                }; <br>
+                <br>
+                &lt;h1 style={myStyle}&gt;Inline css with js objeact!!!&lt;/h1&gt;
+            </p>
+            <h3>CSS Stylesheet</h3>
+            <p class="border">
+                You can write your CSS styling in a separate file, just save the file with the .css file extension, and
+                import it in your application.
+                <br><br>
+                file.css <br>
+                #main{ <br>
+                background-color : red ; <br>
+                color : green; <br>
+                } <br><br>
+                App.js <br>
+                import './App.css'; <br><br>
+                &lt;p id='main'&gt;&lt;/p&gt;
+            </p>
+            <h3>CSS Modules</h3>
+            <p class="border">
+                Create the CSS module with the .module.css extension, example: file.module.css.
+                <br><br>
+                <br>
+                .first{ <br>
+                background-color : red ; <br>
+                color : green; <br>
+                } <br><br>
+                App.js <br>
+                import style from "file.module.css" <br><br>
+                &lt;p className={style.first}&gt;module css&lt;/p&gt;
+            </p>
+        </div>
+
+        <h3>React memo</h3>
+        <p>
+            React memo use to skip rendering a component if it's props have not changed.
+
+            This can improve performance.
+        </p>
+
+        <div class="ex"> <br>
+            App3.js
+            <p class="border">
+                import { useState } from "react"; <br>
+                import Todos from "./Todos"; <br>
+                <br>
+                export default function App3() { <br>
+                const [count, setCount] = useState(0); <br>
+                const [todos, setTodos] = useState(["todo 1", "todo 2"]); <br>
+                <br>
+                const increment = () => { <br>
+                &nbsp;&nbsp;&nbsp;&nbsp; setCount((c) => c+1); <br>
+                &nbsp;&nbsp; }; <br>
+                &nbsp;&nbsp; <br>
+                &nbsp;&nbsp; console.log("Todos") <br>
+                &nbsp;&nbsp; return ( <br>
+                &nbsp;&nbsp;&nbsp;&nbsp; &lt;&gt; <br>
+                &nbsp;&nbsp;&nbsp;&nbsp; &lt;Todos todos={todos} /&gt; <br>
+                &nbsp;&nbsp;&nbsp;&nbsp; &lt;hr /&gt; <br>
+                &nbsp;&nbsp;&nbsp;&nbsp; &lt;div&gt; <br>
+                &nbsp;&nbsp;&nbsp;&nbsp; Count: {count} <br>
+                &nbsp;&nbsp;&nbsp;&nbsp; &lt;button onClick={increment}&gt;+&lt;/button&gt; <br>
+                &nbsp;&nbsp;&nbsp;&nbsp; &lt;/div&gt; <br>
+                &nbsp;&nbsp;&nbsp;&nbsp; &lt;/&gt; <br>
+                &nbsp;&nbsp; ); <br>
+                };
+            </p>
+            Todos.js
+            <p class="border">
+                import { memo } from "react"; <br>
+                <br>
+                const Todos = ({ todos }) =&gt; { <br>
+                &nbsp;&nbsp; console.log("child render"); <br>
+                &nbsp;&nbsp; return ( <br>
+                &nbsp;&nbsp; &nbsp;&nbsp; &lt;&gt; <br>
+                &nbsp;&nbsp; &nbsp;&nbsp; &lt;h2&gt;My Todos &lt;/h2&gt; <br>
+                &nbsp;&nbsp; &nbsp;&nbsp; {todos.map((todo, index) =&gt; { <br>
+                &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; return &lt;p key={index}&gt;{todo}&lt;/p&gt;; <br>
+                &nbsp;&nbsp; &nbsp;&nbsp; })} <br>
+                &nbsp;&nbsp; &nbsp;&nbsp; &lt;/&gt; <br>
+                &nbsp;&nbsp; ); <br>
+                }; <br>
+                export default memo(Todos); <br>
+            </p>
+        </div>
+
+        <!--........................... Hooks in react...................... -->
+
+        <h2 id="hook">React Hooks </h2>
+        <div class="ex">
+            Hooks were added to React in version 16.8. <br>
+            Hooks allow us to "hook" into React features such as state and lifecycle methods. <br><br>
+
+            Hooks allow function components to have access to state and other React features. Because of this, class
+            components are generally no longer needed. <br><br>
+
+            Note : Although Hooks generally replace class components, there are no plans to remove classes from React.
+            <p class="border">
+                <b>Hook Rules</b> <br>
+                Hooks can only be called inside React function components. <br>
+                Hooks can only be called at the top level of a component. <br>
+                Hooks cannot be conditional
+            </p>
+        </div>
+        <!--.................. Use state hooks................ -->
+        <h2>useState hook</h2>
+        <div class="ex">
+            <p class="border">
+                The React useState Hook allows to use state in a function component. <br>
+                <b>import the useState Hook.</b> <br>
+                import { useState } from "react"; <br> <br>
+
+                <b>Initialize useState</b>
+                import { useState } from "react"; <br><br>
+
+                function MyColor() {<br>
+                &nbsp;&nbsp; const [color, setColor] = useState(""); <br>
+                }
+            </p>
+            <b>Update State</b> <br>
+            We should never directly update state. Ex: color = "red" is not allowed. <br>
+
+            <p class="border">
+                import { useState } from "react"; <br>
+                import ReactDOM from "react-dom/client"; <br>
+                <br>
+                function MyColor() { <br>
+                &nbsp;&nbsp; const [color, setColor] = useState("red"); <br>
+                &nbsp;&nbsp; return ( <br>
+                &nbsp;&nbsp;&nbsp;&nbsp; &lt;&gt; <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;h1&gt;My favorite color is {color}!&lt;/h1&gt; <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;button type="button" onClick={() =&gt;
+                setColor("blue")}&gt;Blue&lt;/button&gt; <br>
+                &nbsp;&nbsp;&nbsp;&nbsp; &lt;/&gt; <br>
+                &nbsp;&nbsp; ) <br>
+                } <br>
+            </p>
+            <b> How many type of data hold State object.</b> <br>
+            The useState hold :- strings, numbers, booleans, arrays, objects, and any combination of these!
+            <p class="border">
+                import { useState } from "react"; <br>
+                import ReactDOM from "react-dom/client"; <br>
+                <br>
+                function Car() { <br>
+                &nbsp;&nbsp; const [car, setCar] = useState({ <br>
+                &nbsp;&nbsp;&nbsp;&nbsp; brand: "Ford", <br>
+                &nbsp;&nbsp;&nbsp;&nbsp; model: "Mustang", <br>
+                &nbsp;&nbsp;&nbsp;&nbsp; year: "1964", <br>
+                &nbsp;&nbsp;&nbsp;&nbsp; color: "red" <br>
+                &nbsp;&nbsp; }); <br>
+                &nbsp;&nbsp; <br>
+                &nbsp;&nbsp; const updateColor = () => { <br>
+                &nbsp;&nbsp;&nbsp;&nbsp; setCar(previousState => { <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return { ...previousState, color: "blue" } <br>
+                &nbsp;&nbsp;&nbsp;&nbsp; }); <br>
+                &nbsp;&nbsp; } <br>
+                &nbsp;&nbsp; <br>
+                &nbsp;&nbsp; return ( <br>
+                &nbsp;&nbsp;&nbsp;&nbsp; &lt;&gt; <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;h1&gt;My {car.brand}&lt;/h1&gt; <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;It is a {car.color} {car.model} from {car.year}.&lt;/p&gt;
+                <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;button type="button" onClick={updateColor}
+                &gt;Blue&lt;/button&gt; <br>
+                &nbsp;&nbsp;&nbsp;&nbsp; &lt;/&gt; <br>
+                &nbsp;&nbsp; ) <br>
+                }
+
+            </p>
+        </div>
+        <!--.................. UseEffect hooks................ -->
+        <h2>useEffect Hooks</h2>
+        <div class="ex">
+            <p>
+                The useEffect Hook allows you to perform side effects in your components. <br>
+                Examples of side effects are: fetching data, directly updating the DOM, and timers. <br>
+                useEffect accepts two arguments. The second argument is optional. <br>
+                useEffect(<function>, <dependency>)
+            </p>
+            <p class="border">
+
+                useEffect(() => { <br>
+                &nbsp;&nbsp; console.log("effect") <br>
+                &nbsp;&nbsp; setTimeout(() => { <br>
+                &nbsp;&nbsp;&nbsp;&nbsp; setCount((count) => count + 1); <br>
+                &nbsp;&nbsp; }, 1000); <br>
+                }); <br> <br>
+
+                useEffect(() => { <br>
+                &nbsp;&nbsp; console.log("effect") <br>
+                &nbsp;&nbsp; setTimeout(() => { <br>
+                &nbsp;&nbsp;&nbsp;&nbsp; setCount((count) => count + 1); <br>
+                &nbsp;&nbsp; }, 1000); <br>
+                },[ ]); <br> <br>
+                useEffect(() => { <br>
+                &nbsp;&nbsp; console.log("effect") <br>
+                &nbsp;&nbsp; setTimeout(() => { <br>
+                &nbsp;&nbsp;&nbsp;&nbsp; setCount((count) => count + 1); <br>
+                &nbsp;&nbsp; }, 1000); <br>
+                },[props,state]); <br>
+            </p>
+        </div>
+        <!-- ............useContex api................... -->
+        <h2>useContext Hook</h2>
+        <div class="ex">
+            React Context is a way to manage state globally. <br><br>
+            <u>App.js</u> <br>
+
+            <p class="border">
+                import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom"; <br>
+                import HookApp from "./HookApp"; <br>
+                import UseEffect from "./UseEffect"; <br>
+                import { createContext, useState } from "react"; <br>
+                <br>
+                export const userContext = createContext(); <br>
+                function App() { <br>
+                &nbsp;&nbsp; const [user, setUser] = useState("jay"); <br>
+                &nbsp;&nbsp; console.log("User in App4 :- ", user) <br>
+                &nbsp;&nbsp; return ( <br>
+                &nbsp;&nbsp;&nbsp;&nbsp; &lt;Router&gt; <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;h1 &gt;This is my App file&lt;/h1&gt; <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;ul id="myid" &gt; <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;li&gt;&lt;Link to="/"&gt;Usestate&lt;/Link&gt;&lt;/li&gt; <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;li&gt;&lt;Link
+                to="/effect"&gt;UseEffect&lt;/Link&gt;&lt;/li&gt;
+                <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/ul&gt; <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;hr /&gt; <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;userContext.Provider value={[user, setUser]} &gt; <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &lt;Routes&gt; <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &lt;Route path="/" element={&lt;HookApp
+                /&gt;}
+                /&gt; <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &lt;Route path="/effect"
+                element={&lt;UseEffect /&gt;} /&gt; <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &lt;Route path="*" element={&lt;h1&gt; 404
+                Error page not found&lt;/h1&gt;} /&gt; <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &lt;/Routes&gt; <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/userContext.Provider&gt; <br>
+                &nbsp;&nbsp;&nbsp;&nbsp; &lt;/Router&gt; <br>
+                &nbsp;&nbsp; ); <br>
+                } <br>
+                <br>
+                export default App;
+            </p>
+            <u>ContextApp.js</u> <br>
+            <p class="border">
+                import React, { useContext, useEffect, useState } from 'react' <br>
+                import { userContext } from './App'; <br>
+
+                export default function ContextApp() { <br>
+
+                &nbsp;&nbsp; <br>
+                &nbsp;&nbsp; // context api code here.... <br>
+                &nbsp;&nbsp; const user = useContext(userContext) <br>
+                &nbsp;&nbsp;&nbsp;&nbsp; let [users ,setUser] = user <br>
+                &nbsp;&nbsp;&nbsp;&nbsp; const handleUserUpdate = () => { <br>
+                &nbsp;&nbsp;&nbsp;&nbsp; setUser("Kapil"); <br>
+                &nbsp;&nbsp; }; <br>
+                &nbsp;&nbsp; console.log("Context api in effect :-", user) <br>
+                &nbsp;&nbsp; return ( <br>
+                &nbsp;&nbsp;&nbsp;&nbsp; &lt;&gt; <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {console.log("html render")} <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;h1&gt;context api button&lt;/h1&gt; <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;button onClick={handleUserUpdate}&gt;Update Context
+                User&lt;/button&gt;
+                <br>
+                &nbsp;&nbsp;&nbsp;&nbsp; &lt;/&gt; <br>
+                &nbsp;&nbsp; ) <br>
+                } <br>
+
+            </p>
+        </div>
+
+
     </div>
 </body>
 
