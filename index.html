@@ -5,63 +5,91 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Reactjs</title>
+    <link rel="stylesheet" href="index.css">
     <style>
-        * {
-            box-sizing: border-box;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 22px;
-            text-align: justify;
-        }
 
-        #main {
-            margin: auto;
-            width: 80%;
-        }
-
-        /* body{
-            margin: 0;
-        }
-
-        #main {
-            margin: 10px;
-        } */
-
-        .ex {
-            background-color: rgb(246 240 251);
-            box-shadow: 0 0 10px 2px black;
-            padding: 10px;
-        }
-
-        .border {
-            border: 1px solid;
-            padding: inherit;
-        }
-
-        @media screen and (max-width : 600px) {
-            * {
-                font-size: 15px;
-                word-wrap: break-word;
-            }
-
-            img {
-                width: 100%;
-            }
-
-            #main {
-                width: 100%
-            }
-
-            h1,
-            h2,
-            h3 {
-                text-align: center;
-            }
-        }
     </style>
 </head>
 
 <body>
-    <div id="main">
+    <div id="myid">
+        <ul>
+            <li>
+
+            </li>
+            <li>
+                <a className="target" href="#history">React hitory</a>
+            </li>
+            <li>
+                <a className="target" href="#intro">Introduction</a>
+            </li>
+            <li>
+                <a className="target" href="#work">How to work react</a>
+            </li>
+            <li>
+                <a className="target" href="#setup">Setup</a>
+            </li>
+            <li>
+                <a className="target" href="#es6">ES-6</a>
+            </li>
+            <li>
+                <a className="target" href="#module">Module</a>
+            </li>
+            <li>
+                <a className="target" href="#component">Component</a>
+            </li>
+            <li>
+                <a className="target" href="#props">State & Props</a>
+            </li>
+            <li>
+                <a className="target" href="#pure">PureComponent</a>
+            </li>
+            <li>
+                <a className="target" href="#lcm">Life cycle method</a>
+            </li>
+            <li>
+                <a className="target" href="#listing">Listing</a>
+            </li>
+            <li>
+                <a className="target" href="#form">Form</a>
+            </li>
+            <li>
+                <a className="target" href="#style">Style in react</a>
+            </li>
+            <li>
+                <a className="target" href="#memo">Memo</a>
+            </li>
+            <li>
+                <a className="target" href="#hook">Hooks</a>
+            </li>
+            <li>
+                <a className="target" href="#usestate">UseState</a>
+            </li>
+            <li>
+                <a className="target" href="#useeffect">UseEffect</a>
+            </li>
+            <li>
+                <a className="target" href="#usecontext">UseContext</a>
+            </li>
+            <li>
+                <a className="target" href="#useref">UseRef</a>
+            </li>
+            <li>
+                <a className="target" href="#usereducer">UseReducer</a>
+            </li>
+            <li>
+                <a className="target" href="#usecallback">UseCallback</a>
+            </li>
+            <li>
+                <a className="target" href="#usememo">UseMemo</a>
+            </li>
+            <li>
+                <a className="target" href="#axios">Axios</a>
+            </li>
+        </ul>
+    </div>
+    <div id="main" id="history">
+        <b id="history"></b> <br><br>
         <h1>HISTORY OF REACT JS</h1>
         <div class="ex">
             <li>
@@ -102,6 +130,7 @@
                 initial release, with new features and improvements being added regularly.
             </li>
         </div>
+        <b id="intro"></b> <br><br>
         <h2>Reactjs</h2>
         <div class="ex">
             <p>
@@ -123,6 +152,7 @@
 
             </p>
         </div>
+        <b id="work"></b><br><br>
         <h2> How does React Work?</h2>
         <div class="ex">
 
@@ -138,6 +168,8 @@
                 <a target="_blank" href="./basic/v-dom.html">Differences between Real Dom and Virtual Dom</a>
             </h3>
         </div>
+        <b id="setup"></b> <br><br>
+
         <h2>Setup</h2>
         <div class="ex">
             <p>Download Nodejs.</p>
@@ -153,11 +185,14 @@
             <img src="./image/runReact.png" alt="React folder structure image"
                 style="margin: auto; width: 100%; height: 600px;">
         </div>
+
         <h3>Explain folder structure. </h3>
         <div class="ex">
             <img src="./image/reactFolderStructur.png" alt="React folder structure image"
                 style="margin: auto; width: 100%; height: 500px;">
         </div>
+        <b id="es6"></b> <br><br>
+
         <h2>ECMAScript 6 (ES6)</h2>
         <div class="ex">
             <p>
@@ -257,6 +292,8 @@
             const FuncName = name => console.log("Abc") <br>
 
         </div>
+        <b id="module"></b> <br><br>
+
         <h2> JavaScript Modules</h2>
         <div class="ex">
             JavaScript modules allow you to break up your code into separate files. <br>
@@ -284,6 +321,8 @@
                 Info()
             </p>
         </div>
+        <b id="jsx"></b> <br><br>
+
         <h2>What is JSX?</h2>
         <div class="ex">
             <p>
@@ -329,6 +368,8 @@
                 </li>
             </ul>
         </div>
+        <b id="component"></b> <br><br>
+
         <h2>What is components in react??</h2>
         <div class="ex">
             <p>
@@ -393,6 +434,7 @@
                 &nbsp; &nbsp; } <br>
                 } <br>
             </div>
+            <b id="props"></b> <br><br>
             <p>
                 <b>State :- </b>
                 React components has a built-in state object. The state object is where you store property values that
@@ -537,6 +579,8 @@
                     &nbsp; &nbsp; } <br>
                     } <br>
                 </div>
+            <b id="pure"></b> <br><br>
+
                 <h2>
                     What is pure component??
                 </h2>
@@ -573,6 +617,8 @@
             </div>
 
         </div>
+        <b id="lcm"></b> <br><br>
+
         <h2>Lifecycle of Components</h2>
         <p>
             Each component has a lifecycle method which you can monitor and manipulate during its three main phases.
@@ -896,6 +942,8 @@
                 export default Unmount;
             </p>
         </div>
+        <b id="event"></b> <br><br>
+
         <h2>React Events</h2>
 
         <div class="ex">
@@ -921,6 +969,8 @@
                 } <br>
             </p>
         </div>
+        <b id="listing"></b> <br><br>
+
         <h2>React listing</h2>
         <div class="ex">
             import React, { Component } from 'react' <br>
@@ -980,6 +1030,8 @@
             } <br>
 
         </div>
+        <b id="form"></b> <br><br>
+
         <h2>React form</h2>
         <div class="ex">
             import { Component } from "react"; <br>
@@ -1030,6 +1082,8 @@
             &nbsp;&nbsp; } <br>
             }
         </div>
+        <b id="style"></b> <br><br>
+
         <h2>Styling in React Using CSS</h2>
         <div class="ex">
             <h3>Inline Styling</h3>
@@ -1076,6 +1130,7 @@
                 &lt;p className={style.first}&gt;module css&lt;/p&gt;
             </p>
         </div>
+        <b id="memo"></b> <br><br>
 
         <h3>React memo</h3>
         <p>
@@ -1131,8 +1186,9 @@
         </div>
 
         <!--........................... Hooks in react...................... -->
+        <b id="hook"></b> <br><br>
 
-        <h2 id="hook">React Hooks </h2>
+        <h2>React Hooks </h2>
         <div class="ex">
             Hooks were added to React in version 16.8. <br>
             Hooks allow us to "hook" into React features such as state and lifecycle methods. <br><br>
@@ -1149,6 +1205,8 @@
             </p>
         </div>
         <!--.................. Use state hooks................ -->
+        <b id="usestate"></b> <br><br>
+
         <h2>useState hook</h2>
         <div class="ex">
             <p class="border">
@@ -1215,6 +1273,8 @@
             </p>
         </div>
         <!--.................. UseEffect hooks................ -->
+        <b id="useeffect"></b> <br><br>
+
         <h2>useEffect Hooks</h2>
         <div class="ex">
             <p>
@@ -1247,6 +1307,8 @@
             </p>
         </div>
         <!-- ............useContex api................... -->
+        <b id="usecontext"></b> <br><br>
+
         <h2>useContext Hook</h2>
         <div class="ex">
             React Context is a way to manage state globally. <br><br>
@@ -1318,6 +1380,8 @@
             </p>
         </div>
         <!-- Useref hooks -->
+        <b id="useref"></b> <br><br>
+
         <h3>useRef hooks</h3>
         <div class="ex">
             The useRef Hook allows you to persist values between renders.
@@ -1325,6 +1389,27 @@
             It can be used to store a mutable value that does not cause a re-render when updated.
 
             It can be used to access a DOM element directly.
+            <p class="border">
+                import React, { useEffect, useState } from 'react' <br>
+                <br>
+                export default function MyRef() { <br>
+                &nbsp;&nbsp; const [count, setCount] = useState(0); <br>
+                &nbsp;&nbsp; <br>
+                &nbsp;&nbsp; let num = 0; <br>
+                &nbsp;&nbsp; useEffect(() => { <br>
+                &nbsp;&nbsp; &nbsp;&nbsp; num = num + 1; //re render issue not persist value <br>
+                &nbsp;&nbsp; &nbsp;&nbsp; console.log("num :-", num) <br>
+                &nbsp;&nbsp; }) <br>
+                &nbsp;&nbsp; return ( <br>
+                &nbsp;&nbsp; &nbsp;&nbsp; &lt;div&gt; <br>
+                &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &lt;h1&gt;How to use use ref&lt;/h1&gt; <br>
+                &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &lt;h5&gt;{count}&lt;/h5&gt; <br>
+                &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &lt;button onClick={() =&gt; setCount(count +
+                1)}&gt;Click&lt;/button&gt; <br>
+                &nbsp;&nbsp; &nbsp;&nbsp; &lt;/div&gt; <br>
+                &nbsp;&nbsp; ) <br>
+                }
+            </p>
             <p class="border">
                 import React, { useState, useEffect, useRef } from 'react' <br>
                 export default function UseRef() { <br>
@@ -1335,21 +1420,21 @@
                 &nbsp;&nbsp; useEffect(() => { <br>
                 &nbsp;&nbsp; &nbsp;&nbsp; // num += 1 ; <br>
                 &nbsp;&nbsp; &nbsp;&nbsp; num.current += 1; <br>
+                &nbsp;&nbsp; &nbsp;&nbsp; btnref.current.style.background="red"<br>
                 &nbsp;&nbsp; &nbsp;&nbsp; console.log("Number :-", num.current) <br>
                 &nbsp;&nbsp; &nbsp;&nbsp; console.log("count :- ", count) <br>
-                &nbsp;&nbsp; &nbsp;&nbsp; // count.current = count.current + 1; <br><br>
-                &nbsp;&nbsp; &nbsp;&nbsp; btnref.current.style.background="red"<br>
 
                 &nbsp;&nbsp; }); <br>
                 &nbsp;&nbsp; <br>
                 &nbsp;&nbsp; const handleRef = () => { <br>
                 &nbsp;&nbsp; &nbsp;&nbsp; setCount(count + 1) <br>
-                &nbsp;&nbsp; &nbsp;&nbsp; // count.current.focus() <br>
-                &nbsp;&nbsp; &nbsp;&nbsp; // count.current.value = 1000; <br>
+                &nbsp;&nbsp; &nbsp;&nbsp; // inpRef.current.focus()<br>
+                &nbsp;&nbsp; &nbsp;&nbsp; inpRef.current.value = 10000;<br>
                 &nbsp;&nbsp; } <br>
                 &nbsp;&nbsp; return ( <br>
                 &nbsp;&nbsp; &nbsp;&nbsp; &lt;&gt; <br>
                 &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &lt;h1&gt;UseRef&lt;/h1&gt; <br>
+                &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &lt;input type="text" ref={inpRef} /&gt;<br>
                 &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &lt;button ref={btnRef} onClick={() =&gt;
                 handleRef()}&gt;count&lt;/button&gt;
                 <br>
@@ -1361,6 +1446,8 @@
         </div>
 
         <!-- Use reducer hooks -->
+        <b id="usereducer"></b> <br><br>
+
         <h3>UseReducer hooks</h3>
         <div class="ex">
             The useReducer Hook is similar to the useState Hook.
@@ -1400,6 +1487,8 @@
 
             </p>
         </div>
+        <b id="usecallback"></b> <br><br>
+
         <h3>UseCallback hooks</h3>
         <div class="ex">
             useCallback is a React Hook that lets you cache a function definition between re-renders. <br>
@@ -1452,6 +1541,8 @@
                 </p>
 
             </div>
+            <b id="usememo"></b> <br><br>
+
             <h3>UseMemo hooks</h3>
             <div class="ex">
                 The React useMemo Hook returns a memoized value. <br>
@@ -1465,7 +1556,61 @@
                 The useMemo and useCallback Hooks are similar. The main difference is that useMemo returns a memoized
                 value and useCallback returns a memoized function. <br>
 
+                <p class="border">
+                    import React, { useMemo, useState } from 'react' <br>
+                    <br>
+
+                    const nums = new Array(3000000).fill(0).map((_, i) => { <br>
+                    &nbsp;&nbsp; return { <br>
+                    &nbsp;&nbsp; &nbsp;&nbsp; index: i, <br>
+                    &nbsp;&nbsp; &nbsp;&nbsp; isMagical: i === 3000000 - 10 <br>
+                    &nbsp;&nbsp; } <br>
+                    }) <br>
+                    export default function UseMemo() { <br>
+                    <br>
+                    &nbsp;&nbsp; const [count, setCount] = useState(0); <br>
+                    &nbsp;&nbsp; const [number, setNumber] = useState(nums); <br>
+                    &nbsp;&nbsp; <br>
+                    &nbsp;&nbsp; <br>
+                    &nbsp;&nbsp; // const magical = number.find(item => item.isMagical === true, console.log(nums)) //
+                    Expensive
+                    &nbsp;&nbsp; Computation <br>
+                    &nbsp;&nbsp; const magical = useMemo(() => number.find(item => item.isMagical ===
+                    true,console.log(nums)), [])
+                    &nbsp;&nbsp; <br>
+                    &nbsp;&nbsp; <br>
+                    &nbsp;&nbsp; console.log("magical :-", magical) <br>
+                    &nbsp;&nbsp; <br>
+                    &nbsp;&nbsp; return ( <br>
+                    &nbsp;&nbsp; &nbsp;&nbsp; &lt;div&gt; <br>
+                    &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &lt;h1&gt;UseMemo component Magical number: - {magical.index}
+                    &lt;/h1&gt; <br>
+                    &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &lt;h5&gt;Count value :- {count}&lt;/h5&gt; <br>
+                    &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; {/* &lt;button onClick={() =&gt; setCount(count +
+                    1)}&gt;Count incriment&lt;/button&gt; */} <br>
+                    &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &lt;button onClick={() =&gt; { <br>
+                    &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; setCount((count) =&gt; count + 1); <br>
+                    &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; if (count == 10) { <br>
+                    &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; setNumber(new Array(10_000_000).fill(0).map((_, i) =&gt; {
+                    <br>
+                    &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; return { <br>
+                    &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; index: i, <br>
+                    &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; isMagical: i === 90000 <br>
+                    &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; } <br>
+                    &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; })) <br>
+                    &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; } <br>
+                    &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; }}&gt; <br>
+                    &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; count is {count} <br>
+                    &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &lt;/button&gt; <br>
+                    &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; <br>
+                    &nbsp;&nbsp; &nbsp;&nbsp; &lt;/div&gt; <br>
+                    &nbsp;&nbsp; &nbsp;&nbsp; ) <br>
+                    } <br>
+
+                </p>
             </div>
+        <b id="axios"></b> <br><br>
+
             <h1>What is Axios :-</h1>
             <div class="ex">
                 <h2>Introduction</h2>
@@ -1487,7 +1632,7 @@
                 </p>
                 <h3>How to call api with Axios mehod :-</h3>
                 <p class="border">
-                    
+
                     axios.get(`url`).then((res) => {
                     console.log(res);
                     }).catch((err)=>cconsole.log(err));
@@ -1508,7 +1653,7 @@
             </div>
         </div>
     </div>
-    </div>
+
 </body>
 
 </html>
