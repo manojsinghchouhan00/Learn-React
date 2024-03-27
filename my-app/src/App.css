@@ -1,0 +1,36 @@
+#myid {
+  /* width: 1000px; */
+  background-color: black;
+  overflow-x: scroll;
+  /* -ms-overflow-style: none;  IE and Edge */
+  scrollbar-width: none;;
+  white-space: nowrap;
+
+}
+#myid li {
+  display: inline-block;
+  list-style-type: none;
+  padding: 5px;
+}
+#myid li a {
+  color: aliceblue;
+  text-decoration: none;
+  padding: 5px;
+}
+#myid li :hover {
+  background-color: blueviolet;
+}
+#myid li :active {
+  color: rgb(47, 0, 255);  
+}
+
+#myid li :focus {
+  color: rgb(0, 255, 30);
+}
+#myid li a:target {
+  color: red;
+}
+
+:target {
+  color: red;
+}
